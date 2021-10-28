@@ -1,0 +1,106 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(49, 34, 11);
+}
+a:hover{
+    cursor: pointer;
+    color: red;
+}
+/* login form */
+.loginForm{
+    position: absolute;
+    width: 400px;
+    left: 35%;
+    top: 15%;
+    border: 1px solid gray;
+    text-align: center;
+    color: aquamarine;
+    background-color: rgb(5, 22, 37);
+}
+.loginForm h1{
+    text-transform: capitalize;
+    text-align: center;
+    color: rgb(252, 252, 252);
+    font-size: 40px;
+}
+.loginForm input[type="text"], .loginForm input[type="password"]{
+    width : 200px;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin: 8px;
+    border: 2px dashed red;
+    border-radius: 5px;
+}
+.loginForm label{
+    color: white;
+}
+
+.loginForm button[type="submit"]{
+     text-align: center;
+    width: 150px;
+    padding: 10px;
+    margin: auto 0;
+    margin-left: 66px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    background: #00d1b2;
+    border: none;
+    color: navajowhite;
+    border-radius: 2px;
+}
+.loginForm button[type = "submit"]:hover{
+    cursor: pointer;
+}
+/* register form */
+.registerForm {
+    position: absolute;
+    width: 400px;
+    left: 35%;
+    top: 15%;
+    border: 1px solid gray;
+    text-align: center;
+    padding-bottom: 14px;
+    border: 1px solid #faffbd;
+    background-color: rgb(136, 90, 90);
+}
+
+.registerForm h1{
+    text-transform: capitalize;
+    text-align: center;
+    color: #243d47;
+    font-size: 25px;
+}
+.registerForm input[type="text"],
+.registerForm input[type="password"], .registerForm input[type="email"] {
+    width: 240px;
+    padding: 10px 10px;
+    font-weight: bold;
+    margin: 8px;
+    border: none;
+    border-radius: 2px;
+}
+.registerForm button {
+    text-align: center;
+    width: 150px;
+    padding: 8px;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    background: #00d1b2;
+    border: none;
+    color: navajowhite;
+    border-radius: 2px;
+}
+.registerForm button:hover{
+    cursor: pointer;
+}
+.registerForm label {
+    float: left;
+    width: 30px;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: whitesmoke;
+}
