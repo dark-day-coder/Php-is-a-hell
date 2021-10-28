@@ -1,19 +1,19 @@
 <?php
     include 'user.php';
-    if(isset($_POST['submit'])){
+    if($_SERVER['REQUEST_METHOD']=='POST'){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        echo $user['name'];
+        
 
         if($username == '' || $password == ''){
-            echo '<p> All the fields are mendatory </p>';
+            echo '<p class = "errorMsg"> All the fields are mendatory </p>';
         }else{
             if(($username !== $user['name'] || $username !== $user['email']) && ($password !== $user['password'])){
-                echo '<p> either the provided user id or password is wrong!';
+                echo '<p class = "errorMsg"> either the provided user id or password is wrong!';
             } 
-            // else {
-            //     header('location:dashboard.php');
-            // }
+            else {
+                header('location:dashboard.php');
+            }
         }
     }
 ?>
