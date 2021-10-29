@@ -12,10 +12,13 @@
         }else if($password !== $confPass){
             echo '<p class = "errorMsg"> password donot match </p>';
         }else{
-            array_push($user['name'],$name);
-            array_push($user['username'],$username);
-            array_push($user['email'],$email);
-            array_push($user['password'],$password);
+            $newUser['name'] = $name;
+            $newUser['username'] = $username;
+            $newUser['email'] = $email;
+            $newUser['password'] = $password;
+
+            array_push($user,$newUser);
+           
 
             header('location:index.php');
 
