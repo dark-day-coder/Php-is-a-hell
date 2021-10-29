@@ -7,6 +7,11 @@ a:hover{
     cursor: pointer;
     color: red;
 }
+.errorMsg{
+    color: white;
+    background-color: rgb(70, 4, 4);
+    font-size: x-large;
+}
 /* login form */
 .loginForm{
     position: absolute;

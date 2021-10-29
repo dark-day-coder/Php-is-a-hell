@@ -1,20 +1,24 @@
 <?php
     include 'user.php';
-    if(isset($_POST['submit'])){
+    //if(isset($_POST['submit'])){
+        if($_SERVER['REQUEST_METHOD']=='POST') {
         $name = $_POST['fullName'];
         $username = $_POST['userName'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confPass = $_POST['confPass'];
         if($name ==''||$username==''||$email==''||$password==''||$confPass==''){
-            echo '<p> all fields are mendatory';
+            echo '<p class = "errorMsg"> all fields are mendatory</p>';
         }else if($password !== $confPass){
-            echo '<p> password donot match';
+            echo '<p class = "errorMsg"> password donot match </p>';
         }else{
             array_push($user['name'],$name);
             array_push($user['username'],$username);
             array_push($user['email'],$email);
             array_push($user['password'],$password);
+
+            header('location:index.php');
+
         }
     }
 ?>
