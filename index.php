@@ -1,5 +1,5 @@
 <?php
-    include 'user.php';
+    require("db-connection.php");
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -8,12 +8,15 @@
         if($username == '' || $password == ''){
             echo '<p class = "errorMsg"> All the fields are mendatory </p>';
         }else{
-            if(($username !== $user['name'] || $username !== $user['email']) && ($password !== $user['password'])){
-                echo '<p class = "errorMsg"> either the provided user id or password is wrong!';
+            $query = "SELECT * FROM `users` WHERE username='$username'
+            AND password='" . md5($password) . "'";
+            $result = mysqli_query($conn, $query);
+            $rows = mysqli_num_rows($result);
+            if ($rows == 1) {
+                session_start();
+                $_SESSION['username'] = $username;  
             } 
-            else {
-                header('location:dashboard.php');
-            }
+            header("Location:dashboard.php");
         }
     }
 ?>
@@ -40,10 +43,6 @@
         <br>
         <button type="submit">Login</button>
         <p>not a member yet? Register <a href="register.php" id="register">Here</a></p>
-        <?php
-        // include 'user.php';
-        // echo $user['name'];
-        ?> 
     </form>
 </body>
 </html>

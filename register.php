@@ -1,5 +1,5 @@
 <?php
-    include 'user.php';
+require('db-connection.php');
     //if(isset($_POST['submit'])){
         if($_SERVER['REQUEST_METHOD']=='POST') {
         $name = $_POST['fullName'];
@@ -12,13 +12,9 @@
         }else if($password !== $confPass){
             echo '<p class = "errorMsg"> password donot match </p>';
         }else{
-            $newUser['name'] = $name;
-            $newUser['username'] = $username;
-            $newUser['email'] = $email;
-            $newUser['password'] = $password;
-
-            array_push($user,$newUser);
-           
+            $query = "INSERT into `users` (fullname, username, email, password)
+                     VALUES ('$name','$username', '$email', '" . md5($password) . "' )";
+            $result = mysqli_query($conn,$query);
 
             header('location:index.php');
 
